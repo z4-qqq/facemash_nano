@@ -1,0 +1,9 @@
+/static/*.jpeg
+/static/*.jpg
+/static/*.png
+/static/*.pdf
+/static/*.JPG
+/static/*.JPEG
+/.idea/
+__pycache__/
+venv/

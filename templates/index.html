@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Picture Voting</title>
+    <style>
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px; /* Add space between images and button */
+        }
+        .image-container img {
+            width: 550px; /* Adjust width as needed */
+            height: 550px; /* Adjust height as needed */
+        }
+        .vote-button {
+            display: block;
+            margin: 20px auto; /* Center the button horizontally */
+            padding: 10px 20px; /* Adjust padding as needed */
+            font-size: 16px; /* Adjust font size as needed */
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align:center;">Vote for the Best Picture!</h1>
+    <div class="image-container" id="image-container">
+        <div>
+            <img src="{{ url_for('static', filename=image1) }}" alt="Image 1">
+            <div style="text-align: center;">
+                <form action="/vote" method="POST">
+                    <input type="hidden" name="selected_image" value="{{ image1 }}">
+                    <input type="submit" class="vote-button" value="Vote for Image 1">
+                </form>
+            </div>
+        </div>
+        <div>
+            <img src="{{ url_for('static', filename=image2) }}" alt="Image 2">
+            <div style="text-align: center;">
+                <form action="/vote" method="POST">
+                    <input type="hidden" name="selected_image" value="{{ image2 }}">
+                    <input type="submit" class="vote-button" value="Vote for Image 2">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
